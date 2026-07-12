@@ -7,7 +7,7 @@ module.exports = {
 		.setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
 		.addIntegerOption(option =>
 			option.setName('amount')
-				.setDescription('Amount of messages to purge (Must be below 100)')
+				.setDescription('Amount of messages to purge.')
 				.setRequired(true)),
 
 	async execute(interaction) {
@@ -22,7 +22,7 @@ module.exports = {
 			await interaction.reply({ content: `:hammer: Successfully purged ${amount} messages!`, ephemeral: true });
 		} catch (error) {
 			console.error(error);
-			await interaction.reply({ content: ":x: There was an error purging messages. (Are the messages older than 14 days? This is a Discord API limitation unfortunately.)", ephemeral: true });
+			await interaction.reply({ content: ":x: There was an error purging messages. (Are the messages older than 14 days? Is there a cooldown? This is a Discord API limitation UNFORTUNATELY.)", ephemeral: true });
 		}
 	},
 };

@@ -138,7 +138,6 @@ function renderGuildsList(guilds) {
     listEl.innerHTML = '';
 
     guilds.forEach(guild => {
-        // Invite link if bot is not in guild
         const inviteUrl = `https://discord.com/oauth2/authorize?client_id=${getDiscordClientIdFromPage() || ''}&permissions=8&scope=bot+applications.commands&guild_id=${guild.id}`;
 
         const item = document.createElement('button');
